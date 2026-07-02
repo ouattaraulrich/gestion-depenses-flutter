@@ -1,17 +1,88 @@
-# mon_premier_app
+# 💰 Gestion Dépenses
 
-A new Flutter project.
+Application mobile Flutter de gestion de dépenses personnelles, avec suivi de budget, statistiques visuelles, dépenses récurrentes et export PDF. Toutes les données sont stockées localement via SQLite — aucune connexion internet requise.
 
-## Getting Started
+## 📱 Fonctionnalités
 
-This project is a starting point for a Flutter application.
+- **Gestion complète des dépenses** : ajouter, modifier, supprimer, consulter
+- **Recherche** et **filtrage par catégorie**
+- **10 catégories prédéfinies** (Nourriture, Transport, Maison, Études, Internet, Factures, Loisirs, Santé, Vêtements, Autres)
+- **Statistiques visuelles** : diagramme circulaire par catégorie, diagramme en barres sur 6 mois
+- **Budget mensuel** avec barre de progression et alertes (80% et dépassement)
+- **Dépenses récurrentes** (loyer, abonnements) générées automatiquement chaque mois
+- **Export PDF** détaillé (mois en cours ou historique complet)
+- **Mode sombre** et **choix de devise** (FCFA, €, $)
+- **Onboarding** au premier lancement
+- **Sauvegarde 100% locale** via SQLite — aucune donnée envoyée en ligne
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Stack technique
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| Composant | Technologie |
+|---|---|
+| Framework | Flutter (Dart) |
+| Base de données | SQLite (`sqflite`) |
+| Gestion d'état | `provider` |
+| Graphiques | `fl_chart` |
+| Export PDF | `pdf` + `printing` |
+| Préférences | `shared_preferences` |
+| Dates | `intl` |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📂 Structure du projet
+
+```
+lib/
+├── main.dart
+├── models/              # Expense, RecurringExpense
+├── database/            # DatabaseHelper (SQLite)
+├── providers/           # ExpenseProvider, SettingsProvider, RecurringProvider
+├── screens/              # Écrans (accueil, ajout, stats, paramètres, récurrentes, onboarding)
+├── widgets/              # Composants réutilisables (cartes, chips, dialogues)
+└── utils/                # Constantes, export PDF
+```
+
+## 🗄️ Base de données
+
+**Table `expenses`**
+
+| Champ | Type |
+|---|---|
+| id | INTEGER (PK) |
+| description | TEXT |
+| amount | REAL |
+| category | TEXT |
+| date | TEXT |
+
+**Table `budgets`** — budget mensuel global ou par catégorie
+**Table `recurring_expenses`** — dépenses générées automatiquement chaque mois
+
+## 🚀 Installation
+
+```bash
+git clone https://github.com/ouattaraulrich/gestion-depenses-flutter.git
+cd gestion-depenses-flutter
+flutter pub get
+flutter run
+```
+
+### Prérequis
+- Flutter SDK installé ([guide officiel](https://docs.flutter.dev/get-started/install))
+- Un émulateur Android/iOS ou un appareil physique connecté
+
+## 📸 Captures d'écran
+
+| Accueil | Statistiques | Ajout |
+|---|---|---|
+| _à ajouter_ | _à ajouter_ | _à ajouter_ |
+
+## 🎯 Ce que ce projet démontre
+
+- Architecture Flutter propre avec séparation modèle / base de données / état / UI
+- Gestion d'état réactive avec `Provider`
+- CRUD complet sur base SQLite locale avec migrations de schéma versionnées
+- Génération de rapports PDF dynamiques
+- Logique métier (calcul de budget, génération automatique de dépenses récurrentes)
+- Interface soignée avec animations (Hero, transitions, thème clair/sombre)
+
+## 📄 Licence
+
+Projet personnel à but éducatif et de démonstration.
