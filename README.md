@@ -68,7 +68,6 @@ flutter run
 - Flutter SDK installé ([guide officiel](https://docs.flutter.dev/get-started/install))
 - Un émulateur Android/iOS ou un appareil physique connecté
 
-## 📸 Captures d'écran
 
 ## 📸 Captures d'écran
 
@@ -78,15 +77,7 @@ flutter run
   <img src="screenshots\Ajout.jpeg" width="250">
 </p>
 
-## 🎯 Ce que ce projet démontre
-
-- Architecture Flutter propre avec séparation modèle / base de données / état / UI
-- Gestion d'état réactive avec `Provider`
-- CRUD complet sur base SQLite locale avec migrations de schéma versionnées
-- Génération de rapports PDF dynamiques
-- Logique métier (calcul de budget, génération automatique de dépenses récurrentes)
-- Interface soignée avec animations (Hero, transitions, thème clair/sombre)
 
 ## 📄 Licence
 
-Projet personnel à but éducatif et de démonstration.
+Projet personnel made by Marvin à but éducatif et de démonstration.
