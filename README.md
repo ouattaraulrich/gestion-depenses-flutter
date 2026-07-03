@@ -70,9 +70,13 @@ flutter run
 
 ## 📸 Captures d'écran
 
-| Accueil | Statistiques | Ajout |
-|---|---|---|
-| _à ajouter_ | _à ajouter_ | _à ajouter_ |
+## 📸 Captures d'écran
+
+<p align="center">
+  <img src="screenshots\Acceuil.jpeg" width="250">
+   <img src="screenshots\Stat.jpeg" width="250">
+  <img src="screenshots\Ajout.jpeg" width="250">
+</p>
 
 ## 🎯 Ce que ce projet démontre
 
